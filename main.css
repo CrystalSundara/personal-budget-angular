@@ -93,6 +93,11 @@ footer {
     vertical-align: top;
 }
 
+.page-area h3 {
+    font-size: 2em;
+    margin: 0.67em 0;
+}
+
 @media screen and (min-width: 768px) {
     .page-area article {
         margin: 10px;
