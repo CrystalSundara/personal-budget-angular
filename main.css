@@ -7,6 +7,20 @@ body {
     font-family: Tahoma, Arial;
 }
 
+#skip {
+    height: 30px;
+    left: 50%;
+    padding: 8px;
+    position: absolute;
+    transform: translateY(-100%);
+}
+
+#skip a:focus {
+    transform: translateY(0%);
+    background-color: white;
+    color: #4d5791;
+}
+
 nav.l1 {
     width: 100%;
     background-color: #4d5791;
@@ -33,7 +47,12 @@ nav.l1 ul li a {
     margin: 0;
 }
 
-nav.l1 ul li a:hover  {
+nav.li ul li a:hover {
+    background-color: #000000;
+}
+
+nav.l1 ul li a:hover, 
+nav.l1 ul li a:focus  {
     background-color: white;
     color: #4d5791;
 }
