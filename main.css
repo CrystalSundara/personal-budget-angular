@@ -7,37 +7,6 @@ body {
     font-family: Tahoma, Arial;
 }
 
-/* #skip {
-    height: 30px;
-    left: 50%;
-    padding: 8px;
-    position: absolute;
-    transform: translateY(-100%);
-}
-
-#skip a:focus {
-    transform: translateY(0%);
-    background-color: white;
-    color: #4d5791;
-} */
-
-/* #skip {
-    position: absolute;
-    z-index: -10;
-    height: 30px;
-    left: 50%;
-    padding: 8px;
-    top: -100px;
-}
-
-#skip a:focus {
-    position: static;
-    z-index: 10;
-    top: 0px;
-    background-color: white;
-    color: #4d5791;
-} */
-
 a.skip-main {
     left: -999px;
     position: absolute;
@@ -49,8 +18,8 @@ a.skip-main {
 }
 
 a.skip-main:focus, a.skip-main:active {
-    background-color: #4d5791;
-    color: white;
+    background-color: white;
+    color: #4d5791;
     left: auto;
     top: auto;
     width: 100%;
@@ -90,11 +59,9 @@ nav.l1 ul li a {
     margin: 0;
 }
 
-nav.l1 ul li a:hover {
-    background-color: #000000;
-}
-  
-nav.l1 ul li a:focus  {
+nav.l1 ul li a:hover,
+nav.l1 ul li a:focus
+ {
     background-color: white;
     color: #4d5791;
 }
@@ -116,13 +83,15 @@ div.hero h2 {
 }
 
 div.hero h1 {
-    color: #fff;
+    /* color: #7614E0; */
+    color: #4d5791;
     font-size: 4.2em;
     margin-bottom: 20px;
 }
 
 div.hero h2 {
-    color: #4d5791;
+    color: #636778;
+    font-size: 1.8em;
 }
 
 .container {
@@ -166,8 +135,5 @@ footer {
     }
     nav.l1 ul li a {
         padding: 0 20px;
-    }
-    div.hero {
-        height: 350px;
     }
 }

@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <!-- This is an SEO Change -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <!-- This is an SEO Change -->
     <meta
         name="description"           
         content="A personal budget website created for a UNCC ITIS 5166 assignment">
-    <meta name="author" content="Crystal Sundaramoorthy">
+    
     <!-- This is an SEO Change -->
     <!-- This is an A11y Change -->
     <title>Personal Budget - Home</title>
+    
     <!-- This is an SEO Change -->
     <link rel="canonical" href="http://67.205.189.103/pb/" />
     <link rel="stylesheet" href="reset.css">
@@ -20,18 +23,19 @@
 
     <!-- This is an A11y Change -->
     <a class="skip-main" href="#maincontent">Skip to main content</a>
-
+  
+    <!-- This is an A11y Change -->
     <!-- This is a Semantic HTML Change -->
-    <header>
+    <header role="banner">
         <!-- This is a Semantic HTML Change -->
         <!-- This is an A11y Change -->
-        <nav aria-label="Main navigation" class="l1">
+        <nav role="navigation" aria-label="Main navigation" class="l1">
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="login.html">Login</a></li>
                 <!-- This is an A11y Change -->
-                <li><a href="https://google.com" target="_blank" rel="noopener" aria-describedby="Opens Google in another tab">Google</a></li>
+                <li><a href="https://google.com" target="_blank" rel="noopener" aria-label="Open Google in another tab">Google</a></li>
             </ul>
         </nav>
 
@@ -41,8 +45,9 @@
         </div>
     </header>
 
-
-    <div class="container center">
+    <!-- This is an A11y Change -->
+    <!-- This is a Semantic HTML Change -->
+    <main role="main" class="container center">
 
         <!-- This is a Semantic HTML Change -->
         <section class="page-area">
@@ -115,12 +120,13 @@
 
         </section>
 
-    </div>
+    </main>
 
+    <!-- This is an A11y Change -->
     <!-- This is a Semantic HTML Change -->
-    <footer>
+    <footer role="contentinfo">
         <div class="center">
-            All rights reserved &copy; Fabio Nolasco
+            All rights reserved &copy; Crystal Sundaramoorthy
         </div>
     </footer>
 
