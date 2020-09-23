@@ -3,7 +3,7 @@
 }
 
 body {
-    font-size: 10px;
+    font-size: 12px;
     font-family: Tahoma, Arial;
 }
 
@@ -24,9 +24,10 @@ nav.l1 ul li {
 
 nav.l1 ul li a {
     display: block;
-    padding: 0 20px;
+    padding: 0 10px;
     line-height: 44px;
     font-size: 1.4em;
+    min-width: 44px;
     text-decoration: none;
     color: #fff;
     margin: 0;
@@ -38,7 +39,7 @@ nav.l1 ul li a:hover  {
 }
 
 div.hero {
-    height: 350px;
+    height: 400px;
     background-color: #b4c6f0;
     background-image: url('bg.png');
     background-size: 400px;
@@ -68,7 +69,7 @@ div.hero h2 {
     width: 100%;
 }
 
-section.page-area {
+.page-area {
     max-width: 768px;
     display: inline-block;
 }
@@ -86,13 +87,21 @@ footer {
 .page-area article {
     display: inline-block;
     width: 100%;
-    max-width: 340px;
+    max-width: 240px;
     text-align: justify;
     margin: 20px;
+    vertical-align: top;
 }
 
 @media screen and (min-width: 768px) {
-    .container .div.text-box {
+    .page-area article {
         margin: 10px;
+        max-width: 340px;
+    }
+    nav.l1 ul li a {
+        padding: 0 20px;
+    }
+    div.hero {
+        height: 350px;
     }
 }
