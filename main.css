@@ -116,6 +116,7 @@ footer {
 
 .page-area article {
     display: inline-block;
+    line-height: 1.5;
     width: 100%;
     max-width: 240px;
     text-align: justify;
@@ -124,6 +125,7 @@ footer {
 }
 
 .page-area h3 {
+    color: #4d5791;
     font-size: 2em;
     margin: 0.67em 0;
 }
