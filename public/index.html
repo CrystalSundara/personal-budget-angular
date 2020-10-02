@@ -18,6 +18,7 @@
     <link rel="canonical" href="http://67.205.189.103/pb/" />
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="d3.css">
 </head>
 <body>
 
@@ -119,6 +120,10 @@
             </article>
 
         </section>
+        <section class="donut">
+            <h2>Budget chart donutified</h2>
+            <div id="d3Chart"></div>
+        </section>  
 
     </main>
 
@@ -132,6 +137,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.20.0/axios.min.js" integrity="sha512-quHCp3WbBNkwLfYUMd+KwBAgpVukJu5MncuQaWXgCrfgcxCJAq/fo+oqrRKOj+UKEmyMCG3tb8RB63W+EmrOBg==" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js" integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg==" crossorigin="anonymous"></script>
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script src="d3donut.js"></script>
 
     <script>
         var dataSource = {
@@ -139,16 +146,14 @@
                 {
                     data: [],
                     backgroundColor: [
-                        '#ffcd56',
-                        '#ff6384',
-                        '#36a2eb',
-                        '#fd6b19',
-                        '#CA054D',
-                        '#474973',
-                        '#5C7457',
-                        '#C1F7DC',
-                        '#BDA0BC',
-                        '#843B62',
+                    '#790149',
+                    '#005Fcc',
+                    '#00EBC1',
+                    '#A700FC',
+                    '#FF6E3A',
+                    '#FFDC3D',
+                    '#00B408',
+                    '#003D30'
                     ],
                 }
             ],
@@ -167,7 +172,7 @@
         function getBudget() {
             axios.get('/budget')
             .then(function (res) {
-                console.log(res.data);
+                //console.log(res.data);
                 for (var i = 0; i < res.data.length; i++){
                     dataSource.datasets[0].data[i] = res.data[i].budget;
                     dataSource.labels[i] = res.data[i].title;
