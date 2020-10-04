@@ -115,7 +115,7 @@
             <article>
                 <h3>Free</h3>
                 <p>
-                    <canvas id="myChart" width="400" height="400"></canvas>>
+                    <canvas id="myChart" width="400" height="400"></canvas>
                 </p>
             </article>
 
@@ -170,7 +170,7 @@
         }
 
         function getBudget() {
-            axios.get('/budget')
+            axios.get('http://localhost:3000/budget')
             .then(function (res) {
                 //console.log(res.data);
                 for (var i = 0; i < res.data.length; i++){
