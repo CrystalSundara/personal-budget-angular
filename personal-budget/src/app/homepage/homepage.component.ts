@@ -1,6 +1,6 @@
 import { Component, AfterViewInit } from '@angular/core';
-import { HttpClient} from '@angular/common/http';
 import { Chart } from 'chart.js';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'pb-homepage',
@@ -9,45 +9,46 @@ import { Chart } from 'chart.js';
 })
 export class HomepageComponent implements AfterViewInit {
 
-  public dataSource = {
-    datasets: [
-        {
-            data: [],
-            backgroundColor: [
-            '#790149',
-            '#005Fcc',
-            '#00EBC1',
-            '#A700FC',
-            '#FF6E3A',
-            '#FFDC3D',
-            '#00B408',
-            '#003D30'
-            ],
-        }
-    ],
-    // These labels appear in the legend and in the tooltips when hovering different arcs
-    labels: []
-    };
-
-  constructor(private http: HttpClient) { }
+  constructor(public dataService: DataService) { }
 
   ngAfterViewInit(): void {
-    this.http.get('http://localhost:3000/budget')
-    .subscribe((res: any) =>  {
-      for (let i = 0; i < res.length; i++) {
-        this.dataSource.datasets[0].data[i] = res[i].budget;
-        this.dataSource.labels[i] = res[i].title;
-        this.createChart();
-      }
+    this.dataService.getChartData().subscribe((data: any) => {
+      this.createChart(data);
     });
   }
 
-  createChart(): void {
-    const ctx = document.getElementById('myChart');
+  createChart(data): void {
+    const chartLabels = [];
+    const values = [];
+    for (let i = 0; i < data.length; i++) {
+      chartLabels[i] = data[i].title;
+      values[i] = data[i].budget;
+    }
+
+    const canvas = document.getElementById('myChart') as HTMLCanvasElement;
+    const ctx = canvas.getContext('2d');
     const myPieChart = new Chart(ctx, {
         type: 'pie',
-        data: this.dataSource
-    });
-}
+        data: {
+          labels: chartLabels,
+          datasets: [
+            {
+            data: values,
+            backgroundColor: [
+              '#790149',
+              '#005Fcc',
+              '#00EBC1',
+              '#A700FC',
+              '#FF6E3A',
+              '#FFDC3D',
+              '#00B408',
+              '#003D30'
+            ],
+          },
+      ],
+    },
+  });
+
+  }
 
 }

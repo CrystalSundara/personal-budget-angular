@@ -14,6 +14,10 @@ import { LoginComponent } from './login/login.component';
 import { P404Component } from './p404/p404.component';
 import { BreadcrumbsComponent } from './breadcrumbs/breadcrumbs.component';
 import { ContactComponent } from './contact/contact.component';
+import { D3donutComponent } from './d3donut/d3donut.component';
+
+import { DataService } from './data.service';
+
 
 @NgModule({
   declarations: [
@@ -27,14 +31,15 @@ import { ContactComponent } from './contact/contact.component';
     LoginComponent,
     P404Component,
     BreadcrumbsComponent,
-    ContactComponent
+    ContactComponent,
+    D3donutComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA]
 })

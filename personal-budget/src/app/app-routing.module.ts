@@ -15,15 +15,18 @@ const routes: Routes = [
   },
   {
     path: 'about',
-    component: AboutComponent
+    component: AboutComponent,
+    pathMatch: 'full'
   },
   {
     path: 'login',
-    component: LoginComponent
+    component: LoginComponent,
+    pathMatch: 'full'
   },
   {
     path: 'contact',
-    component: ContactComponent
+    component: ContactComponent,
+    pathMatch: 'full'
   },
   {
     path: '**',
